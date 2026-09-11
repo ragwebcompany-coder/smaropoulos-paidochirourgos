@@ -74,3 +74,20 @@ body {
 }
 
 .hairline { border-color: var(--color-line); }
+
+/*
+  Το βίντεο του ήρωα είναι φόντο, όχι περιεχόμενο προς αναπαραγωγή. Όταν το
+  iOS Safari μπλοκάρει το autoplay, ζωγραφίζει από μόνο του ένα μεγάλο κουμπί
+  αναπαραγωγής στο κέντρο. Δεν πρέπει να εμφανίζεται ποτέ.
+*/
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+  pointer-events: none;
+}

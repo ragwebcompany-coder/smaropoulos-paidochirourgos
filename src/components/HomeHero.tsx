@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import {
   motion,
   useReducedMotion,
@@ -16,7 +16,32 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 export function HomeHero() {
   const ref = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const reduce = useReducedMotion();
+
+  // Το βίντεο είναι διακοσμητικό φόντο και πρέπει να ξεκινά μόνο του. Το iOS
+  // όμως μπλοκάρει το autoplay σε λειτουργία χαμηλής κατανάλωσης και δείχνει
+  // το δικό του κουμπί αναπαραγωγής. Ζητάμε ξανά αναπαραγωγή όταν η σελίδα
+  // γίνεται ορατή και με την πρώτη επαφή, ώστε να ξεκινήσει χωρίς να
+  // χρειαστεί ο επισκέπτης να πατήσει κάτι.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    const tryPlay = () => {
+      const p = v.play();
+      if (p) p.catch(() => {});
+    };
+    tryPlay();
+    document.addEventListener("visibilitychange", tryPlay);
+    window.addEventListener("pointerdown", tryPlay, { once: true });
+    window.addEventListener("touchstart", tryPlay, { once: true });
+    return () => {
+      document.removeEventListener("visibilitychange", tryPlay);
+      window.removeEventListener("pointerdown", tryPlay);
+      window.removeEventListener("touchstart", tryPlay);
+    };
+  }, []);
 
   // Παράλλαξη συνδεδεμένη με την κύλιση μέσω τιμών κίνησης, εκτός κύκλου
   // απόδοσης του React.
@@ -38,11 +63,15 @@ export function HomeHero() {
         className="absolute inset-0 -z-10 h-[116%]"
       >
         <video
+          ref={videoRef}
           className="h-full w-full object-cover"
           autoPlay
           muted
           loop
           playsInline
+          controls={false}
+          disablePictureInPicture
+          tabIndex={-1}
           preload="metadata"
           poster="/video/hero-poster.jpg"
           aria-hidden="true"
