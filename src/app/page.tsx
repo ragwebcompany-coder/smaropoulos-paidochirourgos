@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { about, procedures } from "@/lib/content";
+import { about, procedures, focusProcedures } from "@/lib/content";
 import { HomeHero } from "@/components/HomeHero";
 import { CredentialsStrip } from "@/components/CredentialsStrip";
 import { Portrait } from "@/components/Portrait";
@@ -65,6 +65,23 @@ export default function Home() {
           <div className="mt-14">
             <ProcedureIndex />
           </div>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mt-12 text-[13px] tracking-[0.12em] text-muted uppercase">
+            Συχνές αναζητήσεις
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-2.5">
+            {focusProcedures.map((item) => (
+              <li key={item.id}>
+                <Link
+                  href={`/epemvaseis#${item.id}`}
+                  className="inline-block rounded-full border border-line bg-ground px-5 py-2.5 text-[14px] text-muted transition-colors hover:border-accent hover:text-accent"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </Section>
 

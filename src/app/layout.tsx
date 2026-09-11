@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Commissioner } from "next/font/google";
-import { seo, doctor, contact } from "@/lib/content";
+import { seo, doctor, contact, focusProcedures } from "@/lib/content";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
@@ -25,6 +25,12 @@ export const metadata: Metadata = {
     template: `%s | ${seo.siteName}`,
   },
   description: seo.description,
+  keywords: [
+    "παιδοχειρουργός Θεσσαλονίκη",
+    "παιδοουρολόγος Θεσσαλονίκη",
+    "χειρουργός παίδων",
+    ...focusProcedures.map((p) => p.name),
+  ],
   openGraph: {
     type: "website",
     locale: "el_GR",
