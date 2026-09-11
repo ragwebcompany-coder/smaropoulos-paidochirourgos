@@ -35,7 +35,7 @@ export default function Home() {
             <Reveal delay={0.16}>
               <Link
                 href="/profil"
-                className="group mt-9 inline-flex items-center gap-2 text-[15px] font-semibold text-accent transition-colors hover:text-accent-soft"
+                className="group mt-9 inline-flex min-h-[44px] items-center gap-2 text-[15px] font-semibold text-accent transition-colors hover:text-accent-soft lg:min-h-0"
               >
                 Το προφίλ του ιατρού
                 <ArrowRight

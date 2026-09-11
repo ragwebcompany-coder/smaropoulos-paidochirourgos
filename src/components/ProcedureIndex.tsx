@@ -18,7 +18,7 @@ export function ProcedureIndex() {
               aria-hidden
               className="pointer-events-none absolute inset-0 origin-left scale-x-0 bg-[linear-gradient(90deg,rgba(38,173,228,0.16),transparent_70%)] opacity-0 transition-all duration-500 ease-out group-hover:scale-x-100 group-hover:opacity-100 group-focus-visible:scale-x-100 group-focus-visible:opacity-100 motion-reduce:transition-none"
             />
-            <span className="relative flex flex-1 flex-col gap-2">
+            <span className="relative flex flex-1 flex-col gap-2 pr-16 lg:pr-0">
               <span className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                 <span className="font-display text-2xl font-extrabold tracking-tight text-ink transition-colors duration-300 group-hover:text-accent lg:text-[32px]">
                   {tier.name}
@@ -31,7 +31,7 @@ export function ProcedureIndex() {
                 {tier.summary}
               </span>
             </span>
-            <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-muted transition-colors duration-300 group-hover:border-accent group-hover:text-accent">
+            <span className="absolute top-7 right-0 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-muted transition-colors duration-300 group-hover:border-accent group-hover:text-accent lg:relative lg:top-auto lg:right-auto">
               <ArrowUpRight
                 size={18}
                 weight="bold"

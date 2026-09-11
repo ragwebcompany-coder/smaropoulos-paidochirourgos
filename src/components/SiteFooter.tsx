@@ -22,22 +22,22 @@ export function SiteFooter() {
             <p className="font-display text-[13px] font-bold tracking-[0.14em] text-muted uppercase">
               Ιατρείο
             </p>
-            <ul className="mt-5 flex flex-col gap-4 text-[15px]">
+            <ul className="mt-3 flex flex-col text-[15px]">
               <li>
                 <a
                   href={contact.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-ink transition-colors hover:text-accent"
+                  className="flex min-h-[44px] items-center gap-3 py-1 text-ink transition-colors hover:text-accent lg:min-h-0"
                 >
-                  <MapPin size={18} className="mt-0.5 shrink-0 text-accent" />
+                  <MapPin size={18} className="shrink-0 text-accent" />
                   {contact.address.full}
                 </a>
               </li>
               <li>
                 <a
                   href={contact.phoneHref}
-                  className="flex items-center gap-3 text-ink transition-colors hover:text-accent"
+                  className="flex min-h-[44px] items-center gap-3 py-1 text-ink transition-colors hover:text-accent lg:min-h-0"
                 >
                   <Phone size={18} className="shrink-0 text-accent" />
                   {contact.phonePretty}
@@ -46,7 +46,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="flex items-center gap-3 break-all text-ink transition-colors hover:text-accent"
+                  className="flex min-h-[44px] items-center gap-3 py-1 break-all text-ink transition-colors hover:text-accent lg:min-h-0"
                 >
                   <EnvelopeSimple size={18} className="shrink-0 text-accent" />
                   {contact.email}
@@ -59,26 +59,26 @@ export function SiteFooter() {
             <p className="font-display text-[13px] font-bold tracking-[0.14em] text-muted uppercase">
               Πλοήγηση
             </p>
-            <ul className="mt-5 flex flex-col gap-3 text-[15px]">
+            <ul className="mt-3 flex flex-col text-[15px]">
               {nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-muted transition-colors hover:text-ink"
+                    className="inline-flex min-h-[44px] items-center text-muted transition-colors hover:text-ink lg:min-h-0 lg:py-1.5"
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[14px]">
+            <ul className="mt-6 flex flex-wrap gap-x-5 text-[14px]">
               {contact.social.map((s) => (
                 <li key={s.href}>
                   <a
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted transition-colors hover:text-accent"
+                    className="inline-flex min-h-[44px] items-center text-muted transition-colors hover:text-accent lg:min-h-0"
                   >
                     {s.label}
                   </a>

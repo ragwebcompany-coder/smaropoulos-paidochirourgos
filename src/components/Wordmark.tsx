@@ -8,7 +8,7 @@ export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-3"
+      className="group flex min-h-[44px] items-center gap-3"
       aria-label={`${doctor.fullName}, αρχική σελίδα`}
     >
       <Caduceus

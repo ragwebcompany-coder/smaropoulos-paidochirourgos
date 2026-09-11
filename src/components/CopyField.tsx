@@ -22,7 +22,7 @@ export function CopyField({ value, label }: { value: string; label: string }) {
       type="button"
       onClick={copy}
       aria-label={`Αντιγραφή: ${label}`}
-      className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-[13px] text-muted transition-colors hover:border-accent hover:text-accent active:translate-y-px"
+      className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-line px-4 py-2 text-[13px] text-muted transition-colors hover:border-accent hover:text-accent active:translate-y-px lg:min-h-0"
     >
       {state === "copied" ? (
         <>

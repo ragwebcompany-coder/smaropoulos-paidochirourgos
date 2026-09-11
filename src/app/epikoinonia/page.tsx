@@ -41,27 +41,28 @@ export default function EpikoinoniaPage() {
                 </p>
                 <a
                   href={contact.phoneHref}
-                  className="mt-3 block font-display text-3xl font-extrabold tracking-tight text-ink transition-colors hover:text-accent lg:text-4xl"
+                  className="mt-3 block py-1 font-display text-3xl font-extrabold tracking-tight text-ink transition-colors hover:text-accent lg:text-4xl"
                 >
                   {contact.phonePretty}
                 </a>
-                <div className="mt-4 flex flex-wrap items-center gap-3">
+                <div className="mt-4">
                   <CopyField value={contact.phone} label="τηλέφωνο" />
-                  <span className="text-[14px] text-muted">
-                    Κλινική:{" "}
-                    {contact.clinicPhones.map((p, i) => (
-                      <span key={p.href}>
-                        {i > 0 && ", "}
-                        <a
-                          href={p.href}
-                          className="text-ink transition-colors hover:text-accent"
-                        >
-                          {p.pretty}
-                        </a>
-                      </span>
-                    ))}
-                  </span>
                 </div>
+                <p className="mt-6 text-[14px] text-muted">
+                  Τηλέφωνα κλινικής
+                </p>
+                <ul className="mt-2.5 flex flex-wrap gap-2.5">
+                  {contact.clinicPhones.map((p) => (
+                    <li key={p.href}>
+                      <a
+                        href={p.href}
+                        className="inline-flex min-h-[44px] items-center rounded-full border border-line px-5 text-[14px] text-ink transition-colors hover:border-accent hover:text-accent"
+                      >
+                        {p.pretty}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
 
@@ -117,7 +118,7 @@ export default function EpikoinoniaPage() {
                       href={contact.address.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group mt-2.5 inline-flex items-center gap-1.5 text-[14px] font-medium text-accent hover:text-accent-soft"
+                      className="group mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[14px] font-medium text-accent hover:text-accent-soft lg:mt-2.5 lg:min-h-0"
                     >
                       Οδηγίες
                       <ArrowUpRight
@@ -137,7 +138,7 @@ export default function EpikoinoniaPage() {
                       href={contact.clinic.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group mt-2.5 inline-flex items-center gap-1.5 text-[14px] font-medium text-accent hover:text-accent-soft"
+                      className="group mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[14px] font-medium text-accent hover:text-accent-soft lg:mt-2.5 lg:min-h-0"
                     >
                       Οδηγίες
                       <ArrowUpRight
@@ -163,7 +164,7 @@ export default function EpikoinoniaPage() {
                         href={s.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-[14px] text-ink transition-colors hover:border-accent hover:text-accent"
+                        className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-line px-5 py-2.5 text-[14px] text-ink transition-colors hover:border-accent hover:text-accent"
                       >
                         {s.label}
                         <ArrowUpRight size={13} weight="bold" />
