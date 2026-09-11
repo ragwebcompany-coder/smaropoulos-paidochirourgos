@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Δρ. Ελευθέριος Σμαρόπουλος - Παιδοχειρουργός & Παιδοουρολόγος
 
-## Getting Started
+Site για τον Δρ. Ελευθέριο Σμαρόπουλο, MD, PhD, Χειρουργό Παίδων στη
+Θεσσαλονίκη. Χτίστηκε από τη φόρμα πελάτη ClinicBRAIN της 2026-09-01 και από
+το υπάρχον site `esmaropoulos.gr`.
 
-First, run the development server:
+## Stack
+
+Next.js 16 (App Router, όλες οι σελίδες στατικές) · Tailwind v4 · Motion ·
+Phosphor Icons · Manrope + Commissioner (και οι δύο με πραγματικό ελληνικό
+subset).
+
+## Πού ζει τι
+
+- `src/lib/content.ts` - **κάθε** επιχειρηματικό στοιχείο: τηλέφωνα, ωράριο,
+  διευθύνσεις, social, βιογραφικό, λίστες επεμβάσεων, χρονολόγια. Αλλαγή
+  στοιχείων γίνεται μόνο εδώ.
+- `src/components/Caduceus.tsx` - το κηρύκειο του λογοτύπου, διανυσματοποιημένο
+  με `potrace` από το αρχικό PNG (`tools/original-logo.png`). Είναι το σήμα του
+  ιατρού, όχι δικό μας σχέδιο.
+- `public/video/hero.mp4` - το βίντεο της αρχικής.
+
+## Δομή σελίδων
+
+Ίδια με το προηγούμενο site, ώστε να μη χαθεί η αναγνωσιμότητα και η
+ευρετηρίαση: `/` · `/profil` · `/spoudes` · `/empeiria` · `/epemvaseis` ·
+`/epikoinonia`.
+
+## Κλείδωμα σχεδιασμού
+
+Ο πελάτης έγραψε «περιμένω προτάσεις σας» για τα χρώματα, οπότε η παλέτα
+δειγματοληπτήθηκε από το ίδιο του το λογότυπο: κυανό `#26ADE4` (το κηρύκειο)
+πάνω σε σκούρο ναυτικό μπλε `#070d16` (ο λευκός λεκτικός τύπος του λογοτύπου
+θέλει σκούρο φόντο). **Ένα θέμα σε όλη τη σελίδα**, χωρίς εναλλαγή ανά ενότητα.
+Ακτίνες: επιφάνειες 16px, διαδραστικά στοιχεία πλήρως στρογγυλά.
+
+## Το βίντεο της αρχικής
+
+Παραγωγή με Higgsfield (`veo3_1_lite`), αφηρημένες κυανές ανταύγειες σε σκούρο
+νερό. Το μοντέλο το απέδωσε μέσα σε πλαίσιο βιντεοκάμερας, οπότε έγινε crop
+(`crop=1010:568:140:50`) για να φύγουν το χρονόμετρο και τα ψεύτικα κουμπιά.
+Μετά, forward + reversed concat ώστε ο βρόχος να είναι αδιόρατος (16s), και
+τελική κωδικοποίηση σε 1280x720 / crf 30 (1,4 MB). Δεν έχει ήχο.
+
+## Φωτογραφίες
+
+- `public/photos/portrait.jpg` - **πραγματική** φωτογραφία του ιατρού από το
+  `esmaropoulos.gr`, upscaled x2 με Lanczos και unsharp mask.
+- `public/photos/consultation-room.jpg` - **παραγόμενη** εικόνα ατμόσφαιρας.
+  Δεν είναι το ιατρείο του και δεν παρουσιάζεται ως τέτοιο: χρησιμοποιείται
+  μόνο ως σκοτεινό φόντο πίσω από τη ζώνη επικοινωνίας, χωρίς λεζάντα.
+  Αν ο ιατρός στείλει φωτογραφίες του χώρου του, αντικαταστήστε τη.
+
+## Τι λείπει ακόμη από τον πελάτη
+
+- **Testimonials.** Έγραψε «υπάρχουν στο google» αλλά δεν έδωσε ούτε σύνδεσμο
+  Google Business ούτε κείμενα. Δεν γράφτηκε καμία κριτική: θα ήταν επινόηση.
+- **Google Business.** Ζήτησε να το φτιάξουμε εμείς. Δεν έχει γίνει.
+- **Blog.** Το παλιό site είχε πέντε άρθρα (#loveourkids). Δεν μεταφέρθηκαν,
+  γιατί δεν ζητήθηκαν στη φόρμα. Τα κείμενα υπάρχουν στο παλιό WordPress.
+- **Online booking.** Η φόρμα έδωσε ραντεβού 30' και ημερολόγιο
+  `lsmaropoulos@gmail.com`, αλλά δεν έχει συνδεθεί σύστημα κρατήσεων. Η
+  επικοινωνία είναι τηλεφωνική.
+- **Φόρμα επικοινωνίας.** Δεν μπήκε: δεν υπάρχει backend ούτε εταιρικό email να
+  τη δεχτεί. Η σελίδα επικοινωνίας δίνει τηλέφωνο, email, χάρτη και αντιγραφή.
+- **Domain.** Το `esmaropoulos.gr` υπάρχει και δείχνει ακόμη στο παλιό
+  WordPress. Χρειάζεται αλλαγή DNS προς Vercel.
+- **Σλόγκαν.** Η φόρμα το άφησε κενό.
+
+## Ανάπτυξη
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
