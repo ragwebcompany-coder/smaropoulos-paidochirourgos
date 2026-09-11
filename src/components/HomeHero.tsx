@@ -92,9 +92,9 @@ export function HomeHero() {
             delay: reduce ? 0 : 0.15,
             ease,
           }}
-          className="max-w-[15ch] font-display text-4xl leading-[1.02] font-extrabold tracking-tight text-balance text-ink md:text-5xl lg:text-[68px]"
+          className="max-w-[19ch] font-display text-[34px] leading-[1.06] font-extrabold tracking-tight text-balance text-ink sm:text-[42px] md:text-5xl lg:text-[56px]"
         >
-          Παιδοχειρουργική και Παιδοουρολογία
+          Παιδοχειρουργός και Παιδοουρολόγος στη Θεσσαλονίκη
         </motion.h1>
 
         <motion.p
@@ -107,9 +107,8 @@ export function HomeHero() {
           }}
           className="mt-7 max-w-[46ch] text-[17px] leading-relaxed text-muted lg:text-[19px]"
         >
-          Δρ. Ελευθέριος Σμαρόπουλος, MD, PhD. Χειρουργός Παίδων στη
-          Θεσσαλονίκη, με 25 χρόνια εμπειρίας από τη νεογνική έως την εφηβική
-          ηλικία.
+          Δρ. Ελευθέριος Σμαρόπουλος, MD, PhD. Χειρουργός Παίδων με 25 χρόνια
+          εμπειρίας, από τη νεογνική έως την εφηβική ηλικία.
         </motion.p>
 
         <motion.div
