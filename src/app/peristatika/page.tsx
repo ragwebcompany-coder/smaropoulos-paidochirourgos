@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { cases, cta } from "@/lib/content";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
@@ -10,7 +10,7 @@ import { CaseImage } from "@/components/CaseImage";
 export const metadata: Metadata = {
   title: "Περιστατικά",
   description:
-    "Περιστατικά παιδοχειρουργικής και παιδοουρολογίας από τον Δρ. Ελευθέριο Σμαρόπουλο: συστροφή όρχεως, λαπαροσκοπική νεφρεκτομή, λιποβλάστωμα του προσθίου θωρακικού τοιχώματος και αφαίρεση κυστικού όγκου ωοθήκης σε παιδί.",
+    "Περιστατικά παιδοχειρουργικής και παιδοουρολογίας από τον Δρ. Ελευθέριο Σμαρόπουλο: συστροφή όρχεως, λαπαροσκοπική νεφρεκτομή, λιποβλάστωμα του προσθίου θωρακικού τοιχώματος, αφαίρεση κυστικού όγκου ωοθήκης σε παιδί και εμβυθισμένο πέος.",
   keywords: cases.map((c) => c.title),
   alternates: { canonical: "/peristatika" },
 };
@@ -51,8 +51,25 @@ export default function PeristatikaPage() {
                     {p}
                   </p>
                 ))}
+                {"videoUrl" in c && (
+                  // Σύνδεσμος και όχι ενσωμάτωση: δεν φορτώνονται cookies του
+                  // Facebook στη σελίδα του ιατρού.
+                  <a
+                    href={c.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mt-8 inline-flex min-h-[44px] items-center gap-2 rounded-full border border-line px-6 py-3 text-[15px] font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+                  >
+                    Δείτε το βίντεο στο Facebook
+                    <ArrowUpRight
+                      size={16}
+                      weight="bold"
+                      className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </a>
+                )}
               </Reveal>
-              <Reveal delay={0.08}>
+              <Reveal delay={0.08} className="flex flex-col gap-10">
                 {c.images.map((img) => (
                   <CaseImage key={img.src} {...img} />
                 ))}

@@ -221,6 +221,7 @@ export const paidoourologia = {
     { name: "Κυστεοουρητηρική παλινδρόμηση", href: null },
     { name: "Βαλβίδες οπίσθιας ουρήθρας", href: null },
     { name: "Συστροφή όρχεως", href: "/peristatika#systrofi-orcheos" },
+    { name: "Εμβυθισμένο πέος", href: "/peristatika#emvythismeno-peos" },
     { name: "Κύστεις όρχεως", href: null },
   ],
 } as const;
@@ -272,6 +273,22 @@ export const cases = [
     paragraphs: [] as string[],
     images: [
       { src: "/photos/cases/kystikos-ogkos-oothikis.jpg", label: "", width: 1169, height: 1494, alt: "Διεγχειρητική εικόνα αφαίρεσης κυστικού όγκου ωοθήκης σε παιδί" },
+    ],
+  },
+  {
+    id: "emvythismeno-peos",
+    title: "Εμβυθισμένο πέος (Buried penis)",
+    textLabel: null,
+    // Το κείμενο του ιατρού κόβεται στο τέλος («...το βαρύ στρες που τους
+    // προκαλεί η»), οπότε η πρόταση κλείνει πριν από το κομμένο σημείο.
+    paragraphs: [
+      "Το εμβυθισμένο πέος (buried penis) αποτελεί μια οντότητα κατά την οποία, ενώ το μήκος του πέους είναι στα φυσιολογικά για την ηλικία επίπεδα, το πέος εξαφανίζεται μεταξύ του δέρματος του οσχέου και του υπερηβικού λίπους.",
+      "Τα μετεγχειρητικά αποτελέσματα είναι άμεσα και εντυπωσιακά, και τόσο η οικογένεια όσο και το παιδί ανακουφίζονται και απαλλάσσονται από το βαρύ στρες.",
+    ],
+    videoUrl: "https://www.facebook.com/share/v/1HrryNd4B6/",
+    images: [
+      { src: "/photos/cases/emvythismeno-peos-prin.jpg", label: "Πριν", width: 590, height: 443, alt: "Εμβυθισμένο πέος, προεγχειρητική εικόνα" },
+      { src: "/photos/cases/emvythismeno-peos-meta.jpg", label: "Μετά", width: 1400, height: 1050, alt: "Εμβυθισμένο πέος, άμεση μετεγχειρητική εικόνα" },
     ],
   },
 ] as const;
