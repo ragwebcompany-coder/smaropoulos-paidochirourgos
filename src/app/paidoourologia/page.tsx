@@ -79,9 +79,9 @@ export default function PaidoourologiaPage() {
               delay={(i % 2) * 0.05}
               className="border-t border-line"
             >
-              {c.anchor ? (
+              {c.href ? (
                 <Link
-                  href={`/epemvaseis#${c.anchor}`}
+                  href={c.href}
                   className="group flex items-center justify-between gap-6 py-6"
                 >
                   <span className="font-display text-lg font-bold tracking-tight text-ink transition-colors group-hover:text-accent lg:text-xl">

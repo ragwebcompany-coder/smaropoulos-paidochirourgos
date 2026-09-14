@@ -48,7 +48,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-[68px] max-w-[1320px] items-center justify-between gap-6 px-5 sm:px-8">
         <Wordmark compact />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Κύρια πλοήγηση">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Κύρια πλοήγηση">
           {nav.map((item) => {
             const active = pathname === item.href;
             return (
@@ -56,7 +56,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`relative rounded-full px-4 py-2 text-[14px] transition-colors ${
+                className={`relative rounded-full px-3.5 py-2 text-[14px] transition-colors ${
                   active ? "text-ink" : "text-muted hover:text-ink"
                 }`}
               >
@@ -80,14 +80,14 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href={contact.phoneHref}
-            className="hidden items-center gap-2 rounded-full border border-line px-4 py-2 text-[14px] text-ink transition-colors hover:border-accent hover:text-accent sm:flex"
+            className="hidden items-center gap-2 rounded-full border border-line px-4 py-2 text-[14px] text-ink transition-colors hover:border-accent hover:text-accent sm:flex xl:hidden 2xl:flex"
           >
             <Phone size={16} weight="regular" />
             {contact.phonePretty}
           </a>
           <Link
             href={cta.href}
-            className="hidden rounded-full bg-accent px-5 py-2.5 text-[14px] font-semibold whitespace-nowrap text-on-accent transition-transform duration-200 hover:bg-accent-soft active:translate-y-px lg:block"
+            className="hidden rounded-full bg-accent px-5 py-2.5 text-[14px] font-semibold whitespace-nowrap text-on-accent transition-transform duration-200 hover:bg-accent-soft active:translate-y-px xl:block"
           >
             {cta.label}
           </Link>
@@ -96,7 +96,7 @@ export function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink xl:hidden"
           >
             {open ? <X size={18} /> : <List size={18} />}
           </button>
@@ -110,7 +110,7 @@ export function SiteHeader() {
             animate={{ opacity: 1, height: "auto" }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, height: 0 }}
             transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-line bg-ground/95 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-t border-line bg-ground/95 backdrop-blur-xl xl:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-5 sm:px-8">
               {nav.map((item) => (

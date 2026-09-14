@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { focusProcedures } from "@/lib/content";
 import { Reveal } from "./Reveal";
 
@@ -25,6 +27,19 @@ export function FocusProcedures() {
           <p className="mt-3 max-w-[52ch] text-[15px] leading-relaxed text-muted lg:text-[16px]">
             {item.body}
           </p>
+          {"caseHref" in item && (
+            <Link
+              href={item.caseHref}
+              className="group mt-4 inline-flex min-h-[44px] items-center gap-2 text-[15px] font-semibold text-accent transition-colors hover:text-accent-soft lg:min-h-0"
+            >
+              Δείτε περιστατικό
+              <ArrowRight
+                size={15}
+                weight="bold"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          )}
         </Reveal>
       ))}
     </ul>
