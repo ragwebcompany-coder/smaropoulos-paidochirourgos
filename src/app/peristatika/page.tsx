@@ -10,7 +10,7 @@ import { CaseImage } from "@/components/CaseImage";
 export const metadata: Metadata = {
   title: "Περιστατικά",
   description:
-    "Περιστατικά παιδοχειρουργικής και παιδοουρολογίας από τον Δρ. Ελευθέριο Σμαρόπουλο: συστροφή όρχεως και λαπαροσκοπική νεφρεκτομή σε έδαφος ακράτειας και ενδομητρίωσης του νεφρού.",
+    "Περιστατικά παιδοχειρουργικής και παιδοουρολογίας από τον Δρ. Ελευθέριο Σμαρόπουλο: συστροφή όρχεως, λαπαροσκοπική νεφρεκτομή, λιποβλάστωμα του προσθίου θωρακικού τοιχώματος και αφαίρεση κυστικού όγκου ωοθήκης σε παιδί.",
   keywords: cases.map((c) => c.title),
   alternates: { canonical: "/peristatika" },
 };
@@ -38,7 +38,11 @@ export default function PeristatikaPage() {
           {c.paragraphs.length > 0 ? (
             <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-20">
               <Reveal>
-                <p className="font-display text-lg font-bold text-ink">Α</p>
+                {c.textLabel && (
+                  <p className="font-display text-lg font-bold text-ink">
+                    {c.textLabel}
+                  </p>
+                )}
                 {c.paragraphs.map((p) => (
                   <p
                     key={p.slice(0, 24)}

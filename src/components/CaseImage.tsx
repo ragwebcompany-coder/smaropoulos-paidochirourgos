@@ -12,14 +12,17 @@ export function CaseImage({
   label,
   width,
   height,
+  sensitive = true,
 }: {
   src: string;
   alt: string;
   label: string;
   width: number;
   height: number;
+  // Μη αιματηρές εικόνες (π.χ. απεικόνιση, ομάδα στο χειρουργείο) φαίνονται απευθείας.
+  sensitive?: boolean;
 }) {
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(!sensitive);
 
   return (
     <figure>
@@ -50,9 +53,9 @@ export function CaseImage({
           </button>
         )}
       </div>
-      <figcaption className="mt-3 flex items-center justify-between gap-4 text-[14px] text-muted">
+      <figcaption className="mt-3 flex min-h-[1.25rem] items-center justify-between gap-4 text-[14px] text-muted">
         <span className="font-display font-bold text-ink">{label}</span>
-        {shown && (
+        {shown && sensitive && (
           <button
             type="button"
             onClick={() => setShown(false)}
