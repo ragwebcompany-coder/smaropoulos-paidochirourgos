@@ -81,6 +81,15 @@ export default function EpikoinoniaPage() {
                 <div className="mt-4">
                   <CopyField value={contact.email} label="email" />
                 </div>
+                <a
+                  href={`mailto:${contact.emailAlt}`}
+                  className="mt-6 block break-all font-display text-xl font-bold tracking-tight text-ink transition-colors hover:text-accent lg:text-2xl"
+                >
+                  {contact.emailAlt}
+                </a>
+                <div className="mt-4">
+                  <CopyField value={contact.emailAlt} label="email" />
+                </div>
               </div>
             </Reveal>
 

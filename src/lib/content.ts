@@ -20,6 +20,7 @@ export const contact = {
   clinicPhones: [
     { pretty: "2310 380 000", href: "tel:+302310380000" },
     { pretty: "2310 236 226", href: "tel:+302310236226" },
+    { pretty: "2311 388 317", href: "tel:+302311388317" },
   ],
   email: "lsmaropoulos@gmail.com",
   emailAlt: "info@esmaropoulos.gr",

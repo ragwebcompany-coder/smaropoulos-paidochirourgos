@@ -52,6 +52,15 @@ export function SiteFooter() {
                   {contact.email}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`mailto:${contact.emailAlt}`}
+                  className="flex min-h-[44px] items-center gap-3 py-1 break-all text-ink transition-colors hover:text-accent lg:min-h-0"
+                >
+                  <EnvelopeSimple size={18} className="shrink-0 text-accent" />
+                  {contact.emailAlt}
+                </a>
+              </li>
             </ul>
           </div>
 

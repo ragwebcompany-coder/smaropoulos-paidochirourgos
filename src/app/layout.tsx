@@ -52,6 +52,7 @@ const physicianSchema = {
   url: seo.url,
   telephone: `+30${contact.phone}`,
   email: contact.email,
+  contactPoint: [contact.emailAlt].map((e) => ({ "@type": "ContactPoint", email: e, contactType: "customer support" })),
   address: {
     "@type": "PostalAddress",
     streetAddress: contact.address.street,
