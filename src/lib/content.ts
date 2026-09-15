@@ -238,8 +238,8 @@ export const cases = [
     textLabel: null,
     paragraphs: [] as string[],
     images: [
-      { src: "/photos/cases/systrofi-a.jpg", label: "Α", width: 1229, height: 1230, alt: "Συστροφή όρχεως, διεγχειρητική εικόνα Α" },
-      { src: "/photos/cases/systrofi-b.jpg", label: "Β", width: 720, height: 720, alt: "Συστροφή όρχεως, διεγχειρητική εικόνα Β" },
+      { src: "/photos/cases/systrofi.jpg", label: "Α. Συστροφή", width: 720, height: 720, alt: "Συστροφή όρχεως: διεγχειρητική εικόνα με συστραμμένο σπερματικό τόνο" },
+      { src: "/photos/cases/aposystrofi.jpg", label: "Β. Αποσυστροφή", width: 1229, height: 1230, alt: "Συστροφή όρχεως: διεγχειρητική εικόνα μετά την αποσυστροφή" },
     ],
   },
   {
