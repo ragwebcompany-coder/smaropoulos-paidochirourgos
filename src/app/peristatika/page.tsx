@@ -35,55 +35,50 @@ export default function PeristatikaPage() {
             </h2>
           </Reveal>
 
-          {c.paragraphs.length > 0 ? (
-            <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-20">
-              <Reveal>
-                {c.textLabel && (
-                  <p className="font-display text-lg font-bold text-ink">
-                    {c.textLabel}
-                  </p>
-                )}
-                {c.paragraphs.map((p) => (
-                  <p
-                    key={p.slice(0, 24)}
-                    className="mt-5 max-w-[62ch] text-[17px] leading-relaxed text-muted"
-                  >
-                    {p}
-                  </p>
-                ))}
-                {"videoUrl" in c && (
-                  // Σύνδεσμος και όχι ενσωμάτωση: δεν φορτώνονται cookies του
-                  // Facebook στη σελίδα του ιατρού.
-                  <a
-                    href={c.videoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group mt-8 inline-flex min-h-[44px] items-center gap-2 rounded-full border border-line px-6 py-3 text-[15px] font-medium text-ink transition-colors hover:border-accent hover:text-accent"
-                  >
-                    Δείτε το βίντεο στο Facebook
-                    <ArrowUpRight
-                      size={16}
-                      weight="bold"
-                      className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    />
-                  </a>
-                )}
-              </Reveal>
-              <Reveal delay={0.08} className="flex flex-col gap-10">
-                {c.images.map((img) => (
-                  <CaseImage key={img.src} {...img} />
-                ))}
-              </Reveal>
-            </div>
-          ) : (
-            <div className="mt-12 grid gap-8 sm:grid-cols-2">
-              {c.images.map((img, j) => (
-                <Reveal key={img.src} delay={j * 0.08}>
-                  <CaseImage {...img} />
-                </Reveal>
+          {c.paragraphs.length > 0 && (
+            <Reveal>
+              {c.textLabel && (
+                <p className="font-display text-lg font-bold text-ink">
+                  {c.textLabel}
+                </p>
+              )}
+              {c.paragraphs.map((p) => (
+                <p
+                  key={p.slice(0, 24)}
+                  className="mt-5 max-w-[62ch] text-[17px] leading-relaxed text-muted"
+                >
+                  {p}
+                </p>
               ))}
-            </div>
+              {"videoUrl" in c && (
+                // Σύνδεσμος και όχι ενσωμάτωση: δεν φορτώνονται cookies του
+                // Facebook στη σελίδα του ιατρού.
+                <a
+                  href={c.videoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-8 inline-flex min-h-[44px] items-center gap-2 rounded-full border border-line px-6 py-3 text-[15px] font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+                >
+                  Δείτε το βίντεο στο Facebook
+                  <ArrowUpRight
+                    size={16}
+                    weight="bold"
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </a>
+              )}
+            </Reveal>
           )}
+
+          {/* Οι εικόνες πάντα κάτω από το κείμενο, ίδια διάταξη σε κάθε
+              περιστατικό. */}
+          <div className="mt-12 grid gap-8 sm:grid-cols-2">
+            {c.images.map((img, j) => (
+              <Reveal key={img.src} delay={j * 0.08}>
+                <CaseImage {...img} />
+              </Reveal>
+            ))}
+          </div>
         </Section>
       ))}
 
