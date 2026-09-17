@@ -291,6 +291,19 @@ export const cases = [
       { src: "/photos/cases/emvythismeno-peos-meta.jpg", label: "Μετά", width: 1400, height: 1050, alt: "Εμβυθισμένο πέος, άμεση μετεγχειρητική εικόνα" },
     ],
   },
+  {
+    id: "aimaggeioma-spondylikis-stilis",
+    title: "Ενδομυϊκό προσπονδυλικό αιμαγγείωμα θωρακοοσφυϊκής μοίρας",
+    textLabel: null,
+    paragraphs: [
+      "Επιτυχής αφαίρεση ενδομυϊκού προσπονδυλικού αιμαγγειώματος της θωρακοοσφυϊκής μοίρας της σπονδυλικής στήλης, σε κορίτσι ηλικίας 10 ετών.",
+    ],
+    images: [
+      // Απεικονιστικές τομές MRI, όχι χειρουργικές εικόνες: φαίνονται απευθείας.
+      { src: "/photos/cases/aimaggeioma-ovelia.jpg", label: "Οβελιαία τομή MRI", width: 1600, height: 1218, sensitive: false, alt: "Οβελιαία τομή MRI της θωρακοοσφυϊκής μοίρας της σπονδυλικής στήλης" },
+      { src: "/photos/cases/aimaggeioma-egkarsia.jpg", label: "Εγκάρσια τομή MRI", width: 1600, height: 1048, sensitive: false, alt: "Εγκάρσια τομή MRI στο ύψος του προσπονδυλικού αιμαγγειώματος" },
+    ],
+  },
 ] as const;
 
 export const studies = [
