@@ -107,6 +107,18 @@ export function SiteFooter() {
             ιατρική εξέταση.
           </p>
         </div>
+
+        <p className="mt-7 text-[13px] text-muted">
+          Made by{" "}
+          <a
+            href="https://www.clinicbrain.gr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-display font-bold text-ink transition-colors hover:text-accent"
+          >
+            ClinicBRAIN
+          </a>
+        </p>
       </div>
     </footer>
   );
