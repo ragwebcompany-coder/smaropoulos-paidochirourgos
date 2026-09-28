@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { seo, nav } from "@/lib/content";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["/", ...nav.map((n) => n.href)];
   return routes.map((route) => ({
